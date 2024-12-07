@@ -1,0 +1,376 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('https://images.pexels.com/photos/12818151/pexels-photo-12818151.jpeg?auto=compress&cs=tinysrgb&w=600') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  nav {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 2;
+  }
+
+  nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    z-index: 3;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 15px;
+    border-radius: 8px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  nav ul li {
+    display: inline;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 5px 10px;
+  }
+
+  nav ul li .donate-btn {
+    border: 2px solid white;
+    padding: 5px 15px;
+    border-radius: 5px;
+  }
+
+  
+
+  @media screen and (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.7);
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+    }
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      flex-direction: column;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    nav ul {
+      gap: 10px;
+    }
+
+    .hero-content h1 {
+      font-size: 1.5rem;
+    }
+
+  
+  }
+  
+
+/* Donation Section */
+.donation {
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    position: relative;
+}
+
+/* Header Style */
+h4 {
+    font-size: 1.8rem;
+    color: #ff8c00;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.donation-green-hr {
+    width: 60px;
+    height: 4px;
+    background-color: #ff8c00;
+    border: none;
+    margin: 0.5rem 0;
+    margin-left: 1rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    width: 150%;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+    color: #ff8c00;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    width: 90%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #ff8c00;
+    outline: none;
+}
+
+select.form-control {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Button Styles */
+button[type="submit"] {
+    width: 50%;
+   
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #ff6e00;
+    transform: scale(1.05);
+}
+
+/* Info Text */
+h3 {
+    font-size: 1.4rem;
+    color: #333;
+    text-align: center;
+    margin-top: 2rem;
+    padding-left: 1rem;
+}
+
+/* Payment Options */
+.row img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ff8c00;
+    text-align: center;
+}
+
+/* Align Form to the Left */
+.col {
+    text-align: left;
+}
+
+/* Responsive Design */
+@media (min-width: 576px) {
+    .donation {
+        padding: 3rem 1.5rem;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .form-group {
+        max-width: 550px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container {
+        padding: 3rem;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .col {
+        flex: 1;
+        padding: 1rem;
+    }
+
+    .col img {
+        width: 80%;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+}
+.footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-content {
+  margin-bottom: 20px;
+}
+
+.footer-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.footer-description {
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-icons .icon {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-icons .icon:hover {
+  color: #00bcd4;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+.footer-bottom a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-description {
+    font-size: 12px;
+  }
+
+  .footer-icons .icon {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-title {
+    font-size: 20px;
+  }
+
+  .footer-description {
+    font-size: 12px;
+  }
+
+  .footer-icons .icon {
+    font-size: 16px;
+  }
+}
